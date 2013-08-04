@@ -1,0 +1,19 @@
+doctype 5
+
+| !{"\n\n<!--\n\nLovingly made by Evan Hahn. Dedicated to Lulu Tang.\n\n-->\n\n"}
+
+html
+
+  head
+    block head
+      link(href="/the.css", rel="stylesheet", type="text/css")
+      meta(charset="UTF-8")
+      title= pageName
+      meta(name="viewport", content="initial-scale=1.0")
+      link(rel="shortcut icon", href="/favicon.ico")
+      meta(http-equiv="X-UA-Compatible", content="IE=Edge,chrome=1")
+
+  body
+    header= pageName
+    block content
+    block scripts
