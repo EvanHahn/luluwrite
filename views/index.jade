@@ -1,8 +1,0 @@
-extends _layout
-
-append content
-
-  form.newpost(method="post", action="/create_post")
-    input(name="title", placeholder="title (optional)", type="text")
-    textarea(name="body", placeholder="typey typey!")
-    input(type="submit", value="Post it!")
