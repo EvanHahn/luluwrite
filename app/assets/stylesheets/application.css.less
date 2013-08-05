@@ -1,5 +1,7 @@
 //= require normalize.css
 
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+
 html, body {
   height: 100%;
 }
@@ -8,6 +10,12 @@ body {
   width: 95%;
   max-width: 700px;
   margin: 10px auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+	background-color: #69d2e7;
+	color: white;
 }
 
 .post-title-input, .post-body-input, .post-submit {
@@ -30,12 +38,22 @@ body {
 }
 
 .post-title, .post-title-input {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 24pt;
+  font-family: "Lato", "Segoe UI", "Avenir", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 36pt;
 }
 
 .post-body, .post-body-input {
-  font-family: Georgia, Garamond, serif;
-  line-height: 1.5em;
+  font-family: "Libre Baskerville", Georgia, Garamond, serif;
+  line-height: 1.45em;
+  font-size: 20px;
+}
+
+.post-title {
+	padding: .3em 0;
+	border-bottom: 6px solid #ffbe3b;
+}
+
+.post-body {
+	padding-bottom: 1em;
 }
