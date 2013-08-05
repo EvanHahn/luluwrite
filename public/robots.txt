@@ -1,2 +1,4 @@
+# fyi this robots.txt is sentient
+
 User-agent: *
 Disallow: /posts/
