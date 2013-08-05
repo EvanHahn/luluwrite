@@ -1,4 +1,6 @@
-<div class="post-title"><%= sanitize @post.title %></div>
+<% unless @post.title.empty? %>
+	<div class="post-title"><%= sanitize @post.title %></div>
+<% end %>
 
 <div class="post-body">
   <%= raw Maruku.new(sanitize @post.body).to_html %>
