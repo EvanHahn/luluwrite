@@ -2,6 +2,12 @@
 
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
 
+@sans: "Lato", "Segoe UI", "Avenir", "Helvetica Neue", Helvetica, sans-serif;
+@serif: "Libre Baskerville", Georgia, Garamond, serif;
+
+@blue: #69d2e7;
+@orange: #ffbe3b;
+
 html, body {
   height: 100%;
 }
@@ -13,10 +19,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-::selection {
-	background-color: #69d2e7;
-	color: white;
+.selection() {
+  background-color: @blue;
+  color: white;
 }
+
+::selection { .selection(); }
+::-moz-selection { .selection(); }
 
 .post-title-input, .post-body-input, .post-submit {
   display: block;
@@ -27,6 +36,7 @@ body {
   width: 100%;
   border: 0;
   border-bottom: 1px solid #000;
+  resize: none;
 }
 
 .post-body-input {
@@ -34,26 +44,47 @@ body {
 }
 
 .post-submit {
+  position: relative;
+  top: 0;
   margin: 0 auto;
+  padding: .5em 2em;
+  font-family: @sans;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 1px 1px 0 lighten(@orange, 25%);
+  color: darken(@orange, 50%);
+  background-color: @orange;
+  border: 1px solid darken(@orange, 25%);
+  border-bottom-width: 5px;
+  border-radius: 10px;
+  &:hover {
+    color: darken(@orange, 45%);
+    background-color: lighten(@orange, 5%);
+    border-color: darken(@orange, 20%);
+  }
+  &:active {
+    top: 2px;
+    border-bottom-width: 3px;
+  }
 }
 
 .post-title, .post-title-input {
-  font-family: "Lato", "Segoe UI", "Avenir", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: @sans;
   font-weight: 700;
   font-size: 36pt;
 }
 
 .post-body, .post-body-input {
-  font-family: "Libre Baskerville", Georgia, Garamond, serif;
+  font-family: @serif;
   line-height: 1.45em;
   font-size: 20px;
 }
 
 .post-title {
-	padding: .3em 0;
-	border-bottom: 6px solid #ffbe3b;
+  padding: .3em 0;
+  border-bottom: 6px solid @orange;
 }
 
 .post-body {
-	padding-bottom: 1em;
+  padding-bottom: 1em;
 }
