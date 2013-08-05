@@ -1,3 +1,10 @@
-<h1>New post</h1>
+<%= form_for(@post) do |f| %>
 
-<%= render "form" %>
+  <%= f.text_field :title, placeholder: "Title your post", class: "post-title-input" %>
+  <%= f.text_area :body, placeholder: "Write your post in Markdown", class: "post-body-input" %>
+  <%= f.submit class: "post-submit" %>
+
+<% end %>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<%= javascript_include_tag "new_post" %>
