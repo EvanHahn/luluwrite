@@ -1,2 +1,2 @@
 <h1><%= sanitize @post.title %></h1>
-<%= raw Maruku.new(@post.body).to_html %>
+<%= raw Maruku.new(sanitize @post.body).to_html %>
