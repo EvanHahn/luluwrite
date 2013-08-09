@@ -14,3 +14,5 @@ gem 'less-rails'
 gem 'therubyracer', platforms: :ruby
 
 gem 'debugger', group: [:development, :test]
+
+gem 'breach-mitigation-rails'
