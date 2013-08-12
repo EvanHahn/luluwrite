@@ -1,4 +1,4 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" %>
 
 <%= form_for(@post) do |f| %>
 
@@ -8,4 +8,21 @@
 
 <% end %>
 
-<%= javascript_include_tag "new_post" %>
+<script type="text/javascript">
+
+var $window = $(window);
+var $titleEl = $(".post-title-input");
+var $bodyEl = $(".post-body-input");
+var $submitEl = $(".post-submit");
+
+$titleEl.focus();
+
+var resize = function() {
+  var newHeight = $window.height() - $titleEl.height() - $submitEl.height() - 100;
+  $bodyEl.height(newHeight);
+};
+
+$window.on("resize", resize);
+resize();
+
+</script>
